@@ -11,9 +11,9 @@ sudo pacman -S \
 	chromium \
 	transmission-cli \
 	docker docker-compose \
-	nodejs go 
+	nodejs go \
 	git \
-	dotnet-runtime dotnet-sdk aspnet-runtime \
+	mono dotnet-runtime dotnet-sdk aspnet-runtime \
 	--noconfirm
 
 function archinstall()
@@ -26,7 +26,7 @@ function archinstall()
 	
 	for app in "$@"
 	do
-		echo >>>> installing ${app}
+		echo installing ${app}
 	  
 		git clone https://aur.archlinux.org/$app.git
 		cd $app
@@ -35,7 +35,7 @@ function archinstall()
 		cd ..
 		rm -rf $app
 		
-		echo >>>> installed $app
+		echo installed $app
 		printf $noColor
 	done
 }
