@@ -9,7 +9,7 @@ echo ">>>> install apps"
 sudo apt install \
     git docker docker-compose \
     build-essential libssl-dev checkinstall \
-    gnome-tweaks solaar
+    gnome-tweaks solaar vim
     
 echo ">>>> install snaps apps"  
 sudo snap install code --classic  
