@@ -1,0 +1,80 @@
+version: "2.1"
+services:
+  transmission:
+    image: lscr.io/linuxserver/transmission
+    container_name: transmission
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - USER=user #optional
+      - PASS=pass #optional
+    volumes:
+      - /home/luizfelipe/Documents/config/transmission:/config
+      - /home/luizfelipe/Documents/videos:/downloads
+    ports:
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp
+    restart: unless-stopped
+    
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - net=host
+      - JELLYFIN_PublishedServerUrl=192.168.1.33 #optional
+    volumes:
+      - /home/luizfelipe/Documents/config/jellyfin:/config
+      - /home/luizfelipe/Documents/cache/jellyfin:/cache
+      - /home/luizfelipe/Documents/videos:/videos
+    ports:
+      - 8096:8096
+      - 8920:8920 #optional
+      - 7359:7359/udp #optional
+      - 1900:1900/udp #optional
+    restart: unless-stopped
+
+  radarr:
+    image: lscr.io/linuxserver/radarr
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /home/luizfelipe/Documents/config/radarr:/config
+      - /home/luizfelipe/Documents/videos/movie:/movies #optional
+      - /home/luizfelipe/Documents/videos:/downloads #optional
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+    
+  sickrage:
+    image: sickrage/sickrage
+    container_name: sickrage
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /home/luizfelipe/Documents/config/sickrage:/config
+      - /home/luizfelipe/Documents/videos:/downloads
+      - /home/luizfelipe/Documents/videos/tvshow:/tv
+    ports:
+      - 8081:8081
+    restart: unless-stopped
+  
+  ddclient:
+    image: lscr.io/linuxserver/ddclient
+    container_name: ddclient
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /home/luizfelipe/Documents/config/ddclient/config
+    restart: unless-stopped
