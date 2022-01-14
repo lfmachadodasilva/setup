@@ -11,7 +11,7 @@ sudo pacman -S \
 	chromium \
 	transmission-cli \
 	docker docker-compose \
-	nodejs go \
+	nodejs npm nvm go \
 	git \
 	mono dotnet-runtime dotnet-sdk aspnet-runtime \
 	--noconfirm
