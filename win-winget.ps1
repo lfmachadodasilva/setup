@@ -12,6 +12,10 @@ winget install -e --id Microsoft.VisualStudioCode
 winget install -e --id MongoDB.Compass.Full
 winget install -e --id Docker.DockerDesktop
 winget install -e --id Microsoft.WindowsTerminal
+winget install -e --id SlackTechnologies.Slack
+winget install -e --id Discord.Discord
+winget install -e --id PostgreSQL.pgAdmin
+winget install -e --id Oracle.VirtualBox
 
 winget install -e --id Git.Git
 winget install -e --id OpenJS.NodeJS
@@ -19,7 +23,8 @@ winget install -e --id OpenJS.NodeJS
 winget install -e --id GoLang.Go
 # winget install -e --id Microsoft.VisualStudio.2019.Community
 winget install -e --id Microsoft.VisualStudio.2022.Community
-winget install -e --id Microsoft.dotnet
+# check if visual studio community will already install dotnet core
+# winget install -e --id Microsoft.dotnet
 
 # install wsl
 wsl --install
