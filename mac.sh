@@ -19,7 +19,7 @@ brew install --cask \
  dotnet 
 
 echo ">>>> installing general packages"
-brew install --cask zoom google-chrome spotify 
+brew install --cask zoom Google-chrome firefox spotify 
 
 if [[ $SHELL != *"zsh" ]]; then
     echo "Installing zsh and setting it as default shell"
