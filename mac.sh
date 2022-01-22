@@ -11,7 +11,7 @@ brew update
 
 echo ">>>> installing dev packages"
 brew install \
- git node nvm go stern mono openjdk \
+ git nvm go stern mono openjdk \
  docker kubectl kubectx minikube 
 brew install --cask \
  visual-studio-code rider \
