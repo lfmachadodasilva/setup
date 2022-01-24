@@ -15,7 +15,7 @@ brew install \
  docker kubectl kubectx minikube 
 brew install --cask \
  visual-studio-code rider \
- postman mongodb-compass itern2 \
+ postman mongodb-compass itern2 lens \
  dotnet 
 
 echo ">>>> installing general packages"
