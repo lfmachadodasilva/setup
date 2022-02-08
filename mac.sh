@@ -12,7 +12,7 @@ brew update
 
 echo ">>>> installing dev packages"
 brew install \
- git nvm go stern mono openjdk \
+ git go stern mono openjdk \
  docker kubectl kubectx minikube 
 brew install --cask \
  visual-studio-code rider \
@@ -43,8 +43,23 @@ if test ! $(whence k); then
     echo "alias k='kubectl'" >>~/.zshrc
 fi
 
+if test ! $(whence nvm); then
+    echo ">>>> install nvm"
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+    echo 'export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >>~/.zshrc
+fi
+
 echo ">>>> restart/reload zsh"
 source .zshrc
+
+if test $(whence nvm); then
+    echo ">>>> install node"
+    nvm install 12
+    nvm install 14
+    nvm install 16
+    nvm install 17
+    nmv use 17
+fi
 
 echo ">>>> configure git"
 git config --global user.name "Luiz Felipe" 
