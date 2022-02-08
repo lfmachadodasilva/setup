@@ -43,7 +43,7 @@ if test ! $(whence k); then
     echo "alias k='kubectl'" >>~/.zshrc
 fi
 
-echo ">>>> update zsh"
+echo ">>>> restart/reload zsh"
 source .zshrc
 
 echo ">>>> configure git"
