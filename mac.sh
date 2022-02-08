@@ -43,6 +43,9 @@ if test ! $(whence k); then
     echo "alias k='kubectl'" >>~/.zshrc
 fi
 
+echo ">>>> update zsh"
+source .zshrc
+
 echo ">>>> configure git"
 git config --global user.name "Luiz Felipe" 
 git config --global user.email "lfmachadodasilva@gmail.com"
