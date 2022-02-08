@@ -20,7 +20,7 @@ brew install --cask \
  dotnet 
 
 echo ">>>> installing general packages"
-brew install --cask zoom Google-chrome firefox spotify 
+brew install --cask zoom Google-chrome firefox spotify tiles
 
 echo ">>>> cleaning up brew"
 brew cleanup 
