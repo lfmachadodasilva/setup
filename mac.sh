@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-# check for Homebrew, install if we don't have it
+chmod u+w /usr/local
+ 
 if test ! $(which brew); then
     echo ">>>> installing homebrew"
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # update homebrew recipes
